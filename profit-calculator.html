@@ -65,9 +65,10 @@ let gstAmt=s*g/100;
 let commAmt=s*c/100;
 let retAmt=s*r/100;
 let total=p+sh+pk+a+gstAmt+commAmt+retAmt;
-let profit=s-total;
-let margin=s?profit/s*100:0;
-profit.innerText="₹"+profit.toFixed(2);
+let finalProfit=s-total;
+let margin=s?finalProfit/s*100:0;
+document.getElementById('profit').innerText =
+"₹" + finalProfit.toFixed(2);
 document.getElementById('margin').innerText=margin.toFixed(2)+"%";
 gstv.innerText="₹"+gstAmt.toFixed(2);
 commv.innerText="₹"+commAmt.toFixed(2);

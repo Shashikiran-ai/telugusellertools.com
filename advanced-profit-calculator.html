@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telugu Ecom Tools - Advanced Profit Calculator</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f7fb;margin:0}
+header{background:#1565e8;color:#fff;text-align:center;padding:20px}
+.container{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px}
+.card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+h2{text-align:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-weight:bold;font-size:14px}
+input{width:100%;padding:10px;margin-top:5px;border:1px solid #ddd;border-radius:8px}
+.resultbox{background:#eef9f1;padding:15px;border-radius:10px;text-align:center}
+.resultbox2{background:#fff5e9;padding:15px;border-radius:10px;text-align:center}
+.breakdown{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+.item{background:#f7f7f7;padding:12px;border-radius:10px;text-align:center}
+@media(max-width:800px){.container,.grid,.breakdown{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<h1>🚀 Telugu Ecom Tools</h1>
+<p>Advanced Profit Calculator</p>
+</header>
+
+<div class="container">
+<div class="card">
+<h2>Input Values</h2>
+<div class="grid">
+<div><label>Product Price (₹)</label><input id="product" value="250"></div>
+<div><label>Selling Price (₹)</label><input id="selling" value="400"></div>
+<div><label>Shipping Fee (₹)</label><input id="shipping" value="0"></div>
+<div><label>Packaging Fee (₹)</label><input id="packaging" value="10"></div>
+<div><label>Advertisement Cost (₹)</label><input id="ads" value="0"></div>
+<div><label>GST Rate (%)</label><input id="gst" value="5"></div>
+<div><label>Return Percentage (%)</label><input id="returnp" value="10"></div>
+<div><label>Commission (%)</label><input id="commission" value="0"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Results</h2>
+<div class="grid">
+<div class="resultbox"><div>Final Profit</div><h1 id="profit">₹0</h1></div>
+<div class="resultbox2"><div>Profit Percentage</div><h1 id="margin">0%</h1></div>
+</div>
+
+<h2>Detailed Breakdown</h2>
+<div class="breakdown">
+<div class="item">GST<br><b id="gstv">₹0</b></div>
+<div class="item">Commission<br><b id="commv">₹0</b></div>
+<div class="item">Returns<br><b id="retv">₹0</b></div>
+<div class="item">Total Cost<br><b id="costv">₹0</b></div>
+</div>
+</div>
+</div>
+
+<script>
+function calc(){
+let p=+product.value||0,s=+selling.value||0,sh=+shipping.value||0,pk=+packaging.value||0,a=+ads.value||0,g=+gst.value||0,r=+returnp.value||0,c=+commission.value||0;
+let gstAmt=s*g/100;
+let commAmt=s*c/100;
+let retAmt=s*r/100;
+let total=p+sh+pk+a+gstAmt+commAmt+retAmt;
+let profit=s-total;
+let margin=s?profit/s*100:0;
+profit.innerText="₹"+profit.toFixed(2);
+document.getElementById('margin').innerText=margin.toFixed(2)+"%";
+gstv.innerText="₹"+gstAmt.toFixed(2);
+commv.innerText="₹"+commAmt.toFixed(2);
+retv.innerText="₹"+retAmt.toFixed(2);
+costv.innerText="₹"+total.toFixed(2);
+}
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>

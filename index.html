@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Telugu Ecom Tools</title>
+<title>Telugu Ecom Tools - Profit Calculator</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,178 +15,229 @@ font-family:Arial, sans-serif;
 }
 
 body{
-background:#f5f7fb;
-color:#333;
+background:#f4f7fc;
 }
 
 header{
 background:linear-gradient(135deg,#0d6efd,#0056d6);
-color:white;
 padding:20px;
 text-align:center;
+color:white;
 }
 
 header h1{
-font-size:40px;
+font-size:35px;
 }
 
-header p{
-margin-top:10px;
-font-size:18px;
-}
-
-.hero{
-padding:60px 20px;
-text-align:center;
-}
-
-.hero h2{
-font-size:38px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:18px;
-color:#666;
+.container{
 max-width:700px;
-margin:auto;
-}
-
-.buttons{
-margin-top:25px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 25px;
-margin:8px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.btn-primary{
-background:#0d6efd;
-color:white;
-}
-
-.btn-secondary{
-background:#25D366;
-color:white;
-}
-
-.tools{
-padding:40px 20px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
-}
-
-.card{
+margin:40px auto;
 background:white;
-padding:25px;
+padding:30px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card h3{
-margin-bottom:10px;
+h2{
+text-align:center;
+margin-bottom:20px;
 color:#0d6efd;
 }
 
-.card p{
-color:#666;
+.input-group{
+margin-bottom:15px;
 }
 
-footer{
-margin-top:50px;
-background:#111827;
+label{
+display:block;
+margin-bottom:5px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#0d6efd;
 color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#0056d6;
+}
+
+.result{
+margin-top:25px;
+padding:20px;
+background:#f8f9fa;
+border-radius:10px;
+display:none;
+}
+
+.result p{
+font-size:18px;
+margin:10px 0;
+}
+
+.profit{
+color:green;
+font-weight:bold;
+font-size:22px;
+}
+
+.loss{
+color:red;
+font-weight:bold;
+font-size:22px;
+}
+
+.home-btn{
+display:block;
 text-align:center;
-padding:25px;
+margin-top:20px;
+text-decoration:none;
+background:#28a745;
+color:white;
+padding:12px;
+border-radius:8px;
+font-weight:bold;
 }
 
-footer p{
-margin:5px 0;
-}
-
-@media(max-width:768px){
-header h1{
-font-size:30px;
-}
-
-.hero h2{
-font-size:28px;
-}
-}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>🚀 Telugu Ecom Tools</h1>
-<p>Free Tools for Amazon, Flipkart & Meesho Sellers</p>
+<h1>💰 Telugu Ecom Tools</h1>
+<p>Profit Calculator</p>
 </header>
 
-<section class="hero">
-<h2>Grow Your E-commerce Business Faster</h2>
-<p>
-Calculate profits, generate product titles, create descriptions,
-find keywords and use powerful tools built specially for Telugu sellers.
-</p>
+<div class="container">
 
-<div class="buttons">
-<a href="#" class="btn btn-primary">Explore Tools</a>
-<a href="https://chat.whatsapp.com/" class="btn btn-secondary">Join WhatsApp Community</a>
-</div>
-</section>
+<h2>Calculate Your Product Profit</h2>
 
-<section class="tools">
-
-<div class="card">
-<h3>💰 Profit Calculator</h3>
-<p>Calculate your exact product profit and margins instantly.</p>
+<div class="input-group">
+<label>Product Cost (₹)</label>
+<input type="number" id="cost">
 </div>
 
-<div class="card">
-<h3>📝 Title Generator</h3>
-<p>Create SEO-friendly product titles for Meesho, Amazon and Flipkart.</p>
+<div class="input-group">
+<label>Selling Price (₹)</label>
+<input type="number" id="selling">
 </div>
 
-<div class="card">
-<h3>📄 Description Generator</h3>
-<p>Generate attractive product descriptions in seconds.</p>
+<div class="input-group">
+<label>Shipping Cost (₹)</label>
+<input type="number" id="shipping">
 </div>
 
-<div class="card">
-<h3>🔍 Keyword Generator</h3>
-<p>Find relevant keywords to improve product visibility.</p>
+<div class="input-group">
+<label>Packing Cost (₹)</label>
+<input type="number" id="packing">
 </div>
 
-<div class="card">
-<h3>📦 GST & Pricing Tools</h3>
-<p>Calculate pricing, GST and business costs easily.</p>
+<div class="input-group">
+<label>Ads Cost (₹)</label>
+<input type="number" id="ads">
 </div>
 
-<div class="card">
-<h3>📈 Seller Growth Tools</h3>
-<p>More powerful tools coming soon for Telugu sellers.</p>
+<div class="input-group">
+<label>GST (%)</label>
+<input type="number" id="gst" value="0">
 </div>
 
-</section>
+<button onclick="calculateProfit()">
+Calculate Profit
+</button>
 
-<footer>
-<p>© 2026 Telugu Ecom Tools</p>
-<p>Built for Telugu E-commerce Sellers ❤️</p>
-</footer>
+<div class="result" id="result">
+
+<p>Total Expenses: ₹ <span id="expenses"></span></p>
+
+<p>Net Profit: ₹ <span id="profit"></span></p>
+
+<p>Profit Margin: <span id="margin"></span>%</p>
+
+</div>
+
+<a href="index.html" class="home-btn">
+🏠 Back to Home
+</a>
+
+</div>
+
+<script>
+
+function calculateProfit(){
+
+let cost =
+parseFloat(document.getElementById("cost").value) || 0;
+
+let selling =
+parseFloat(document.getElementById("selling").value) || 0;
+
+let shipping =
+parseFloat(document.getElementById("shipping").value) || 0;
+
+let packing =
+parseFloat(document.getElementById("packing").value) || 0;
+
+let ads =
+parseFloat(document.getElementById("ads").value) || 0;
+
+let gst =
+parseFloat(document.getElementById("gst").value) || 0;
+
+let gstAmount =
+selling * gst / 100;
+
+let totalExpenses =
+cost + shipping + packing + ads + gstAmount;
+
+let netProfit =
+selling - totalExpenses;
+
+let margin =
+selling > 0 ?
+(netProfit / selling) * 100 : 0;
+
+document.getElementById("expenses").innerText =
+totalExpenses.toFixed(2);
+
+document.getElementById("profit").innerText =
+netProfit.toFixed(2);
+
+document.getElementById("margin").innerText =
+margin.toFixed(2);
+
+document.getElementById("result").style.display =
+"block";
+
+if(netProfit >= 0){
+document.getElementById("profit").className =
+"profit";
+}
+else{
+document.getElementById("profit").className =
+"loss";
+}
+
+}
+
+</script>
 
 </body>
 </html>

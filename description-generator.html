@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Description Generator - Telugu Ecom Tools</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+margin:0;
+}
+
+header{
+background:#1565e8;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:30px auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+h2{
+text-align:center;
+color:#1565e8;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#1565e8;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+padding:20px;
+background:#eef5ff;
+border-radius:10px;
+line-height:1.8;
+}
+
+.home{
+display:inline-block;
+margin-top:20px;
+padding:12px 20px;
+background:#28a745;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📄 Telugu Ecom Tools</h1>
+<p>Description Generator</p>
+</header>
+
+<div class="container">
+
+<h2>Generate Product Description</h2>
+
+<label>Product Name</label>
+<input type="text" id="product" placeholder="Example: Bluetooth Speaker">
+
+<label>Product Features (comma separated)</label>
+<textarea id="features" rows="4" placeholder="Portable, Waterproof, Long Battery Backup"></textarea>
+
+<button onclick="generateDescription()">
+Generate Description
+</button>
+
+<div class="result" id="result">
+Your product description will appear here...
+</div>
+
+<a href="index.html" class="home">🏠 Back to Home</a>
+
+</div>
+
+<script>
+
+function generateDescription(){
+
+let product =
+document.getElementById("product").value;
+
+let features =
+document.getElementById("features").value;
+
+let description = `
+<b>${product}</b><br><br>
+
+✅ Premium Quality Product<br>
+✅ Features: ${features}<br>
+✅ Durable and Easy to Use<br>
+✅ Perfect for Daily Use<br>
+✅ Trusted Choice for Online Buyers<br><br>
+
+Upgrade your lifestyle with ${product}. Designed for quality, performance and convenience.
+`;
+
+document.getElementById("result").innerHTML = description;
+
+}
+
+</script>
+
+</body>
+</html>
